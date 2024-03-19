@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia - Zarządzanie Magazynem i Księgowością {{message}}</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        .container {
+            width: 80%; /* Adjust the width as needed */
+            margin: 0 auto; /* This centers the container */
+            text-align: center; /* Center text within the container */
+            padding: 20px; /* Padding inside the container */
+            border: 1px solid #ccc; /* Optional: adds a border for visibility */
+        }
+        .back{
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 20px;">
+        <h1>Historia operacji  {{message}}</h1>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Działanie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for e in historia %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ e }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        <div class="back">        
+            <form action="/">
+                <button type="submit" class="btn btn-primary">Powrót</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
